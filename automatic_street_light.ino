@@ -1,0 +1,22 @@
+#define sensorPin A5  
+#define light 2
+
+int sensorValue;
+
+void setup()
+{
+  pinMode(light, OUTPUT);
+  pinMode(sensorPin, INPUT);
+}
+
+void loop()
+{
+  sensorValue = analogRead(sensorPin);  
+  
+  // Check if it's dark then switch on the light; else let it remain off 
+  if (sensorValue <100)
+    digitalWrite(light,HIGH);
+
+  else
+    digitalWrite(light,LOW);
+}
